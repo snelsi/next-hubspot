@@ -2,7 +2,7 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/next-hubspot?style=flat-square)](https://www.npmjs.com/package/next-hubspot)
 [![Bundle Size](https://img.shields.io/bundlephobia/min/next-hubspot?style=flat-square)](https://bundlephobia.com/result?p=next-hubspot)
-![License](https://img.shields.io/npm/l/next-hubspot?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/snelsi/next-hubspot/blob/master/LICENSE)
 
 Embed HubSpot forms into your Next.js application using hooks.
 
