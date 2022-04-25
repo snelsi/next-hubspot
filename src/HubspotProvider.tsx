@@ -35,6 +35,7 @@ interface HubspotProviderProps extends Partial<ScriptProps> {
 /** Loads Hubspot script to the document and syncs loading state between forms on the page */
 const HubspotProvider: React.FC<HubspotProviderProps> = ({
   children,
+  id = "hubspotScript",
   src = "https://js.hsforms.net/forms/v2.js",
   strategy = "afterInteractive",
   onLoad: passedOnLoad,
@@ -74,7 +75,7 @@ const HubspotProvider: React.FC<HubspotProviderProps> = ({
   return (
     <HubspotContext.Provider value={value}>
       {children}
-      <Script src={src} strategy={strategy} onLoad={onLoad} onError={onError} {...props} />
+      <Script id={id} src={src} strategy={strategy} onLoad={onLoad} onError={onError} {...props} />
     </HubspotContext.Provider>
   );
 };
