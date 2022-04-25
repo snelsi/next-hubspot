@@ -1,6 +1,6 @@
 {
   "name": "next-hubspot",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Hubspot forms in Next.js with no headache",
   "repository": "https://github.com/snelsi/next-hubspot",
   "license": "MIT",
