@@ -1,24 +1,38 @@
-# Hubspot Forms for Next.js
+# ⭐ Hubspot Forms for Next.js
 
 [![npm (scoped)](https://img.shields.io/npm/v/next-hubspot?style=flat-square)](https://www.npmjs.com/package/next-hubspot)
 [![Bundle Size](https://img.shields.io/bundlephobia/min/next-hubspot?style=flat-square)](https://bundlephobia.com/result?p=next-hubspot)
+![type definition](https://img.shields.io/npm/types/next-recaptcha-v3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/snelsi/next-hubspot/blob/master/LICENSE)
 
 Embed HubSpot forms into your Next.js application using hooks.
 
+🌳 Tiny and Tree-Shakable
+
+🦄 Written in TypeScript
+
+👾 Works with multiple forms
+
+😎 Uses `next/script` component
+
 ## Install
 
-```
-$ npm install --save next-hubspot
+```ssh
+yarn add next-hubspot
 ```
 
+or
+
+```ssh
+npm install --save next-hubspot
 ```
-$ yarn add next-hubspot
-```
+
+
 
 ## Getting Started
 
 Wrap your application with `HubspotProvider`. This will add [Hubspot script](https://js.hsforms.net/forms/v2.js) to your document.
+All props are passed directly to the Script tag, so you can use all props from the [next/script documentation](https://nextjs.org/docs/api-reference/next/script).
 
 ```TSX
 import { HubspotProvider } from 'next-hubspot';
@@ -49,3 +63,19 @@ const HubspotForm = () => {
 }
 
 ```
+
+## TypeScript
+
+The module is written in TypeScript and type definitions are included.
+
+## Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## LICENSE
+
+[MIT](./LICENSE)
