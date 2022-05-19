@@ -61,8 +61,9 @@ const HubspotForm = () => {
         <div id="husbpot-form-wrapper" />
     )
 }
-
 ```
+
+All props are based on the [HubSpot docs](https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options). 
 
 ## TypeScript
 
