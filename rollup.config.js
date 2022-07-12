@@ -13,7 +13,6 @@ const config = {
       file: packageJson.main,
       format: "cjs",
       sourcemap: true,
-      exports: "auto",
     },
     {
       file: packageJson.module,
