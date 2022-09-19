@@ -36,12 +36,10 @@
   "engines": {
     "node": ">=12.22.0"
   },
-  "dependencies": {
+  "devDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "next": "^12.2.5"
-  },
-  "devDependencies": {
+    "next": "^12.3.0",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/react": "^18.0.17",
