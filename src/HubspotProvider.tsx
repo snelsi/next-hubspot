@@ -7,7 +7,8 @@ import React, {
   useState,
   useDebugValue,
 } from "react";
-import Script, { ScriptProps } from "next/script";
+import Script from "next/script";
+import type { ScriptProps } from "next/script";
 
 interface HubspotContextProps {
   /** Is Hubspot script loaded */
