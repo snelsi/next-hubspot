@@ -1,9 +1,9 @@
 // TODO: Improve types
 
 /** Unknown function */
-type ƒ = (...args: any[]) => any;
+type ƒ = (...args: unknown[]) => unknown;
 /** Unknown object */
-type Object = { [x: string]: any };
+type θ = Record<string, unknown>;
 
 /**
  * Locales supported by HubSpot forms
@@ -90,7 +90,6 @@ export interface HubspotFormProps {
   /**
    * Callback that executes before the form builds, takes form configuration object as single argument: onBeforeFormInit(ctx)
    */
-  // tslint:disable-next-line:no-mixed-interface
   readonly onBeforeFormInit?: () => any;
   /**
    * Callback that executes after form is built, placed in the DOM, and validation has been initialized.
@@ -210,8 +209,8 @@ export interface Form {
         level: string;
         projectName: string;
         release: string;
-        tags: Object;
-        user: Object;
+        tags: θ;
+        user: θ;
       };
       getBlacklistedErrorMessages: ƒ;
       report: ƒ;
@@ -223,7 +222,7 @@ export interface Form {
     InputMixin: {
       componentDidMount: ƒ;
       componentDidUpdate: ƒ;
-      contextTypes: Object;
+      contextTypes: θ;
       forceValidate: ƒ;
       handleJqueryChange: ƒ;
       setFieldValue: ƒ;
@@ -429,39 +428,41 @@ export interface Hubspot {
     constants: {
       onstants: {
         nameKey: string;
-        options: Object;
-        processingConsentTypes: Object;
+        options: θ;
+        processingConsentTypes: θ;
       };
     };
   };
-  locale_utils: Object;
+  locale_utils: θ;
   objectTypeIds: {
-    constants: Object;
+    constants: θ;
   };
   operators: Operators;
-  phone_utils: Object;
+  phone_utils: θ;
   recaptcha: {
-    keys: Object;
+    keys: θ;
   };
   serializeArray: ƒ;
   utils: Utils;
   vidyard_utils: {
     renderVidyardPlayers: ƒ;
   };
-  _emailValidationAndResubCache: Object;
-  _xhrCache: Object;
+  _emailValidationAndResubCache: θ;
+  _xhrCache: θ;
 }
 
 export interface Hbspt {
   forms: {
     create: (props: HubspotFormProps) => any;
-    deps: Record<string, Object>;
+    deps: Record<string, θ>;
   };
-  executeRecaptcha: Object;
-  resetRecaptcha: Object;
-  resize: Object;
+  executeRecaptcha: θ;
+  resetRecaptcha: θ;
+  resize: θ;
   shells: number;
 }
+
+/* eslint-disable no-var */
 
 // Both 'hbspt' and 'hubspot' variables are globally availabel once script is loaded
 declare global {
