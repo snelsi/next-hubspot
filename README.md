@@ -27,8 +27,6 @@ or
 npm install --save next-hubspot
 ```
 
-
-
 ## Getting Started
 
 Wrap your application with `HubspotProvider`. This will add [Hubspot script](https://js.hsforms.net/forms/v2.js) to your document.
@@ -63,7 +61,7 @@ const HubspotForm = () => {
 }
 ```
 
-All props are based on the [HubSpot docs](https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options). 
+All props are based on the [HubSpot docs](https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options).
 
 ## TypeScript
 
