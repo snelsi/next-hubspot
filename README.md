@@ -52,7 +52,7 @@ const HubspotForm = () => {
     const { loaded, error, formCreated } = useHubspotForm({
         portalId: 'XXXXXXX',
         formId: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX',
-        target: 'hubspot-form-wrapper'
+        target: '#hubspot-form-wrapper'
     });
 
     return (
