@@ -49,17 +49,36 @@ const MyApp = ({ Component, pageProps }) => (
 import { useHubspotForm } from 'next-hubspot';
 
 const HubspotForm = () => {
-    const { loaded, error, formCreated } = useHubspotForm({
-        portalId: 'XXXXXXX',
-        formId: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX',
-        target: 'hubspot-form-wrapper'
-    });
+  const { loaded, error, formCreated } = useHubspotForm({
+    portalId: 'XXXXXXX',
+    formId: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX',
+    target: '#hubspot-form-wrapper'
+  });
 
-    return (
-        <div id="hubspot-form-wrapper" />
-    )
+  return (
+    <div id="hubspot-form-wrapper" />
+  )
 }
 ```
+
+If you don't need to use any parameters: `loaded`, `error`, `formCreated` etc. You can also use it like this:
+
+```TSX
+import { useHubspotForm } from 'next-hubspot';
+
+const HubspotForm = () => {
+  useHubspotForm({
+    portalId: 'XXXXXXX',
+    formId: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX',
+    target: '#hubspot-form-wrapper'
+  });
+
+  return (
+    <div id="hubspot-form-wrapper" />
+  )
+}
+```
+
 
 All props are based on the [HubSpot docs](https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options).
 
