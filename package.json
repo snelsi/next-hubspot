@@ -33,7 +33,7 @@
     "next": ">=11.0.0"
   },
   "engines": {
-    "node": ">=12.22.0"
+    "node": ">=14.0.0"
   },
   "devDependencies": {
     "react": "^18.2.0",
