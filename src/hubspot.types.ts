@@ -66,10 +66,6 @@ export interface HubspotFormProps {
    */
   readonly errorMessageClass?: string;
   /**
-   * Show all errors at once inside a single container. Defaults to true, otherwise only shows the first error for each field.
-   */
-  readonly groupErrors?: string;
-  /**
    * Locale for the form, used to customize language for form errors and the date picker. See Add internationalized error messages below.
    */
   readonly locale?: HubSpotFormLocale;
