@@ -92,18 +92,68 @@ export interface HubspotFormProps {
    * This is perfect for any logic that needs to execute when the form is on the page.
    * Takes the jQuery form object as the argument: onFormReady($form)
    */
-  readonly onFormReady?: ($form?: any) => any;
+  readonly onFormReady?: ($form?: HTMLFormElement) => any;
   /**
    * Callback that executes after form is validated, just before the data is actually sent.
    * This is for any logic that needs to execute during the submit.
    * Any changes will not be validated. Takes the jQuery form object as the argument: onFormSubmit($form)
    */
-  readonly onFormSubmit?: ($form?: any) => any;
+  readonly onFormSubmit?: (formValues: { name: string; value: any }[]) => any;
   /**
    * Callback the data is actually sent.
    * This allows you to perform an action when the submission is fully complete, such as displaying a confirmation or thank you message.
    */
-  readonly onFormSubmitted?: () => any;
+  readonly onFormSubmitted?: (
+    submitMessage: HTMLDivElement,
+    params: { redirectUrl: string },
+  ) => any;
+
+  readonly onFormDefinitionFetchSuccess?: (res: {
+    form: {
+      captchaEnabled: boolean;
+      cssClass: string;
+      formFieldGroups: Record<string, unknown>[];
+      formTypeNumber: number;
+      guid: string;
+      inlineMessage: string;
+      isPublished: boolean;
+      metaData: { name: string; value: string }[];
+      portalId: number;
+      redirectUrl: string;
+      style: string;
+      submitText: string;
+      thankYouMessageJson: string;
+      themeColor: string;
+      themeName: string;
+      variantId: string;
+    };
+
+    countryCode?: string;
+    errorCode?: unknown;
+    gates?: { viralityVariation: boolean; useRecaptchaEnterprise: boolean };
+    globalStyle?: unknown;
+    knownSmartFields?: unknown[];
+    portalSetting?: { enableLiveValidation: boolean };
+    properties?: Record<string, unknown>;
+    scopes?: {
+      noBranding: boolean;
+      renderShell: boolean;
+      rawHtmlAccess: boolean;
+      customStyleAccess: boolean;
+    };
+    themeCss?: unknown;
+    time?: number;
+  }) => any;
+
+  readonly onFormDefinitionFetchError?: (res: unknown) => any;
+
+  readonly onFormFailedValidation?: ($form?: HTMLFormElement) => any;
+
+  readonly onFormError?: (
+    errorCode: string,
+    _: unknown,
+    values: { id: string; value: any; errors: string[][] }[],
+  ) => any;
 }
 
 export interface Mixin {
