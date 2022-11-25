@@ -63,6 +63,13 @@ const HubspotForm = () => {
 
 All props are based on the [HubSpot docs](https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options).
 
+## Related Official Hubspot Documentation:
+
+- [hubspot-form-if-im-using-an-external-site](https://knowledge.hubspot.com/forms/how-can-i-share-a-hubspot-form-if-im-using-an-external-site)
+- [forms/advanced_form_options](https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options)
+- [building-blocks/forms](https://developers.hubspot.com/docs/cms/building-blocks/forms)
+- [buildung-blocks/forms#using-embed-code](https://developers.hubspot.com/docs/cms/building-blocks/forms#using-the-form-hubl-tag:~:text=the%20parameters%20available.-,Using%20the%20form%20embed%20code,-When%20adding%20forms)
+
 ## TypeScript
 
 The module is written in TypeScript and type definitions are included.
