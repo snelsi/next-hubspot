@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState, useDebugValue } from "react";
 import { useHubspotContext } from "./HubspotProvider";
 import type { HubspotFormProps } from "./hubspot.types";
