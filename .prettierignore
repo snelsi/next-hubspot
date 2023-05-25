@@ -1,3 +1,4 @@
 .github
 lib
 node_modules
+pnpm-lock.yaml
