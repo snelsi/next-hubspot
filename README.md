@@ -27,6 +27,10 @@ or
 npm install --save next-hubspot
 ```
 
+## Pure ESM package
+
+This package is now [pure ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c). It cannot be `require()`'d from CommonJS.
+
 ## Getting Started
 
 Wrap your application with `HubspotProvider`. This will add [Hubspot script](https://js.hsforms.net/forms/v2.js) to your document.
