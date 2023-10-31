@@ -7,8 +7,11 @@ import React, {
   useState,
   useDebugValue,
 } from "react";
-import Script from "next/script";
-import type { ScriptProps } from "next/script";
+import NextScript from "next/script.js";
+import type { ScriptProps } from "next/script.js";
+
+// https://github.com/vercel/next.js/issues/46078
+const Script = NextScript as unknown as React.FC<ScriptProps>;
 
 interface HubspotContextProps {
   /** Is Hubspot script loaded */

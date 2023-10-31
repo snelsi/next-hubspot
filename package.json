@@ -12,9 +12,9 @@
     "form",
     "hook"
   ],
-  "main": "lib/index.js",
-  "module": "lib/index.esm.js",
-  "types": "lib/types/index.d.ts",
+  "type": "module",
+  "exports": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],

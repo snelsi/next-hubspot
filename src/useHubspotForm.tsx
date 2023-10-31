@@ -1,6 +1,6 @@
 import { useEffect, useState, useDebugValue } from "react";
-import { useHubspotContext } from "./HubspotProvider";
-import type { HubspotFormProps } from "./hubspot.types";
+import { useHubspotContext } from "./HubspotProvider.js";
+import type { HubspotFormProps } from "./hubspot.types.js";
 
 interface UseHubSpotFormProps extends HubspotFormProps {}
 

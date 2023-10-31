@@ -1,4 +1,4 @@
-export * from "./hubspot.types";
+export * from "./hubspot.types.js";
 
-export * from "./HubspotProvider";
-export * from "./useHubspotForm";
+export * from "./HubspotProvider.js";
+export * from "./useHubspotForm.js";
