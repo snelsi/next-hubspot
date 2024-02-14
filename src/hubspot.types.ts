@@ -33,6 +33,11 @@ export interface HubspotFormProps {
   readonly portalId: string;
   readonly formId: string;
   readonly target: string;
+
+  /**
+   * The region of the portal where the form was created. This is used to retrieve the form definition. Possible values are na1 or eu1.
+   */
+  readonly region?: string;
   /**
    * URL to which the form will redirect upon a successful form completion. Cannot be used with inlineMessage.
    */
@@ -53,6 +58,14 @@ export interface HubspotFormProps {
    * CSS class that will be applied to the form.
    */
   readonly cssClass?: string;
+  /**
+   * A CSS string that, when defined, is used instead of the built-in CSS theme. This can be used for setting your own CSS styling.
+   */
+  readonly css?: string;
+  /**
+   * String that overrides the text of the submit button.
+   */
+  readonly submitText?: string;
   /**
    * CSS class that will be applied to the submit input instead of the default .hs-button.primary.large.
    */
@@ -76,9 +89,17 @@ export interface HubspotFormProps {
    */
   readonly translations?: any;
   /**
-   * Array of domains to block in email inputs.
+   * Array of domains, specified as strings, to block in email input fields.
    */
-  readonly blockedDomains?: string[];
+  readonly manuallyBlockedEmailDomain?: string[];
+  /**
+   * Set the Salesforce campaign key to associate form submissions with the campaign.
+   */
+  readonly sfdcCampaignId?: string;
+  /**
+   * Set the GoToWebinar campaign key to enroll form submission contacts to a GoToWebinar webinar. The portal must have the GoToWebinar integration installed.
+   */
+  readonly goToWebinarWebinarKey?: string;
   /**
    * When embedding the same form on the same page twice, provide this Id for each identical form embed. The Id value is arbitrary, so long as it is not the same between forms.
    */
