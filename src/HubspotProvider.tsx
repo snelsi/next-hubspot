@@ -1,14 +1,7 @@
-import React, {
-  createContext,
-  useContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  useDebugValue,
-} from "react";
+import React, { createContext, useContext, useMemo, useState, useDebugValue } from "react";
 import NextScript from "next/script.js";
 import type { ScriptProps } from "next/script.js";
+import { useIsHubspotLoaded } from "./useIsHubspotLoaded.js";
 
 // https://github.com/vercel/next.js/issues/46078
 const Script = NextScript as unknown as React.FC<ScriptProps>;
@@ -42,36 +35,18 @@ const HubspotProvider: React.FC<HubspotProviderProps> = ({
   id = "hubspotScript",
   src = "https://js.hsforms.net/forms/v2.js",
   strategy = "afterInteractive",
-  onLoad: passedOnLoad,
-  onError: passedOnError,
   ...props
 }) => {
-  const [loaded, setLoaded] = useState(false);
+  const loaded = useIsHubspotLoaded();
   const [error, setError] = useState(false);
 
   // Reset state when script src is changed
-  useEffect(() => {
-    setLoaded(false);
+  // Related: https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes
+  const [prevSrc, setSrc] = useState(src);
+  if (src !== prevSrc) {
+    setSrc(src);
     setError(false);
-  }, [src]);
-
-  // Handle script load
-  const onLoad = useCallback(
-    (e: any) => {
-      setLoaded(true);
-      passedOnLoad?.(e);
-    },
-    [passedOnLoad],
-  );
-
-  // Handle script error
-  const onError = useCallback(
-    (e: any) => {
-      setError(true);
-      passedOnError?.(e);
-    },
-    [passedOnError],
-  );
+  }
 
   // Prevent unnecessary rerenders
   const value = useMemo(() => ({ loaded, error }), [loaded, error]);
@@ -79,7 +54,7 @@ const HubspotProvider: React.FC<HubspotProviderProps> = ({
   return (
     <HubspotContext.Provider value={value}>
       {children}
-      <Script id={id} src={src} strategy={strategy} onLoad={onLoad} onError={onError} {...props} />
+      <Script id={id} src={src} strategy={strategy} {...props} />
     </HubspotContext.Provider>
   );
 };

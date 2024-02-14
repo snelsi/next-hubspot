@@ -15,7 +15,7 @@ const useHubspotForm = (formProps: UseHubSpotFormProps): UseHubSpotFormResponse 
   const [formCreated, setFormCreated] = useState(false);
 
   useEffect(() => {
-    if (loaded && !formCreated) {
+    if ((loaded || typeof window?.hbspt?.forms?.create === "function") && !formCreated) {
       try {
         window.hbspt.forms.create(formProps);
         setFormCreated(true);
@@ -27,7 +27,7 @@ const useHubspotForm = (formProps: UseHubSpotFormProps): UseHubSpotFormResponse 
     }
     // Don't include 'formProps' here to avoid rerenders
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loaded, formCreated, setFormCreated]);
+  }, [loaded, formCreated]);
 
   useDebugValue(`Form created: ${formCreated}`);
 
