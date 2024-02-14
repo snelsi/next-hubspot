@@ -534,7 +534,7 @@ export interface Hbspt {
 
 /* eslint-disable no-var */
 
-// Both 'hbspt' and 'hubspot' variables are globally availabel once script is loaded
+// Both 'hbspt' and 'hubspot' variables are globally available once script is loaded
 declare global {
   var hubspot: Hubspot;
   var hbspt: Hbspt;
