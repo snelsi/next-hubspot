@@ -18,4 +18,5 @@ const subscribe = (callback: () => void) => {
 };
 
 /** Returns `true` if `hbspt` global object is available */
-export const useIsHubspotLoaded = () => useSyncExternalStore(subscribe, isHubspotLoaded);
+export const useIsHubspotLoaded = () =>
+  useSyncExternalStore(subscribe, isHubspotLoaded, isHubspotLoaded);
