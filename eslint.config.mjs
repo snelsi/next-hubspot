@@ -9,7 +9,7 @@ const eslintConfig = tseslint.config(
   tseslint.configs.recommended,
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat["jsx-runtime"],
-  reactHooks.configs["recommended-latest"],
+  reactHooks.configs.flat.recommended,
   eslintConfigPrettier,
   {
     settings: {

@@ -57,6 +57,7 @@ export const useHubspotForm = (formProps: HubspotFormProps): UseHubSpotFormRespo
     if (!isHbsptLoaded || isFormCreated) return;
     try {
       hbspt.forms.create(formProps);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsFormCreated(true);
       setError(null);
     } catch (e) {

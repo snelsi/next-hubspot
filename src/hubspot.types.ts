@@ -533,8 +533,6 @@ export interface Hbspt {
   shells: number;
 }
 
-/* eslint-disable no-var */
-
 // Both 'hbspt' and 'hubspot' variables are globally available once script is loaded
 declare global {
   var hubspot: Hubspot;
