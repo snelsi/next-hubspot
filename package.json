@@ -1,6 +1,6 @@
 {
   "name": "next-hubspot",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Hubspot forms in Next.js with no headache",
   "repository": {
     "type": "git",
